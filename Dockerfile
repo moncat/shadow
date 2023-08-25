@@ -1,0 +1,10 @@
+FROM oddrationale/docker-shadowsocks
+
+ENV SERVER_ADDR 0.0.0.0
+ENV SERVER_PORT 443
+ENV PASSWORD 789632
+ENV METHOD aes-256-cfb
+
+EXPOSE 443
+
+CMD ssserver -s $SERVER_ADDR -p $SERVER_PORT -k $PASSWORD -m $METHOD
